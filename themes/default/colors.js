@@ -1,0 +1,22 @@
+export const white = '#FFFFFF'
+export const black = '#000000'
+
+export const colorPrimaryBg = '#D7623F'
+export const colorSecondaryBg = '#7E7E7E'
+export const colorPrimaryTxt = colorSecondaryBg
+export const colorSecondaryTxt = white
+export const colorActive = '#4FA3A5'
+export const colorPlaceholderText = 'rgba(85, 85, 85, 0.61)'
+export const colorBorderTextInput = 'rgba(85, 85, 85, 0.1)'
+export const colorSectionHeader = 'rgba(109, 109, 109, 0.1)'
+export const colorInterestsWrapper = 'rgba(109, 109, 109, 0.38)'
+export const colorSectionHeaderTitle = '#545454'
+export const colorCategoryBackground = '#F4F4F4'
+export const transparent = 'transparent'
+export const colorCategoryText = '#6D6D6D'
+export const colorProfileImageBorder = '#95989A'
+export const colorBadgeBg = '#82B733'
+export const colorIconNewPost = '#B1B1B1'
+export const colorPublicGroup = '#50A3A4'
+export const colorGroupHeader = '#EBEBEB'
+export const colorSwitchBackground = '#F1F1F1'
