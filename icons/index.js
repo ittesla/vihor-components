@@ -98,6 +98,9 @@ import IconCheck from './IconCheck'
 import IconGroup from './IconGroup'
 import IconWatch from './IconWatch'
 import IconPause from './IconPause'
+import IconArchive from './IconArchive'
+import IconLighting from './IconLighting'
+import IconLayers from './IconLayers'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -199,3 +202,6 @@ export {IconCheck}
 export {IconGroup}
 export {IconWatch}
 export {IconPause}
+export {IconArchive}
+export {IconLighting}
+export {IconLayers}
