@@ -43,10 +43,10 @@ class VRadioButtons extends Component<Props, State> {
 
   onChange = (value: string) => {
     if (typeof this.props.onChange === 'function') {
-      this.props.onChange(value)
-    } else {
-      this.setState({value})
+      return this.props.onChange(value)
     }
+
+    this.setState({value})
   }
 
   getValue = () => {
