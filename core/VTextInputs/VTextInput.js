@@ -32,7 +32,8 @@ type PropTypes = {
   disabled?: boolean,
   style?: any,
   withReset?: boolean,
-  onReset?: Function
+  onReset?: Function,
+  currency?: string
 }
 
 type StateProps = {
@@ -148,6 +149,22 @@ class VTextInput extends Component<PropTypes, StateProps> {
     )
   }
 
+  renderCurrencyText () {
+    if (typeof this.props.currency === 'undefined') {
+      return null
+    }
+
+    return (
+      <TouchableOpacity
+        hitSlop={HIT_SLOP}
+        style={styles.showPasswordButton}
+        onPress={this.props.onResetPress}
+      >
+        <VText style={styles.textInput}>{this.props.currency}</VText>
+      </TouchableOpacity>
+    )
+  }
+
   render() {
     const {
       placeholder,
@@ -211,6 +228,7 @@ class VTextInput extends Component<PropTypes, StateProps> {
         <VHorizontalLine color={borderColor}/>
         {this.renderShowPassword()}
         {this.renderReset()}
+        {this.renderCurrencyText()}
         {this.renderErrorMessage()}
         {this.renderHint()}
       </View>

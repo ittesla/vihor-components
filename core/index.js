@@ -24,6 +24,7 @@ import VGooglePacesAutocomplete, {
 import VSwitch from './VSwitch'
 import VCheckbox from './VCheckbox'
 import VDateTimePicker from './VDateTimePicker'
+import VRadioButtons from './VRadioButtons'
 
 export {VButton}
 export {VContainer}
@@ -51,3 +52,4 @@ export {ValidatedGooglePlacesAutocomplete}
 export {VSwitch}
 export {VCheckbox}
 export {VDateTimePicker}
+export {VRadioButtons}
