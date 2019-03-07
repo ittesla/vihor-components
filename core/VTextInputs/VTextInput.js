@@ -210,7 +210,11 @@ class VTextInput extends Component<PropTypes, StateProps> {
     }
 
     return (
-      <View {...props}>
+      <TouchableOpacity
+        {...props}
+        onPress={this.props.onPress}
+        disabled={(typeof this.props.onPress !== 'function')}
+      >
         <TextInput
           {...textInputProps}
           ref={this.props.forwardedRef}
@@ -231,7 +235,7 @@ class VTextInput extends Component<PropTypes, StateProps> {
         {this.renderCurrencyText()}
         {this.renderErrorMessage()}
         {this.renderHint()}
-      </View>
+      </TouchableOpacity>
     )
   }
 }

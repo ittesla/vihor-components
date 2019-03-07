@@ -25,6 +25,7 @@ import VSwitch from './VSwitch'
 import VCheckbox from './VCheckbox'
 import VDateTimePicker from './VDateTimePicker'
 import VRadioButtons from './VRadioButtons'
+import VButtonGroup from './VButtonGroup'
 
 export {VButton}
 export {VContainer}
@@ -53,3 +54,4 @@ export {VSwitch}
 export {VCheckbox}
 export {VDateTimePicker}
 export {VRadioButtons}
+export {VButtonGroup}

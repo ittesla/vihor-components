@@ -92,7 +92,6 @@ class VGooglePlacesAutocomplete extends Component<Props, State> {
       typeof value.description !== 'undefined' &&
       value.description.length > 0
     ) {
-      console.log('render this shit')
       return (
         <View>
           <VTextInput value={value.description} disabled/>

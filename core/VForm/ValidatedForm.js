@@ -108,6 +108,12 @@ class ValidatedForm extends Component<FormProps, FormState> {
     })
   }
 
+  setValue = (name: string, value: any) => {
+    this.setState({
+      [name]: value
+    })
+  }
+
   render() {
     const controlledChildren = this.getControlledChildren(this.props)
       .map((child, index) => {

@@ -20,6 +20,18 @@ const validators = {
     defaultErrorMessage: 'number',
     errorMessageProp: 'numberError'
   },
+  positiveNumber: {
+    test: ({positiveNumber}) => positiveNumber === true,
+    validate: ({value}) => (/^\d*$/.test(value) && Math.sign(value) >= 0),
+    defaultErrorMessage: 'positive number',
+    errorMessageProp: 'positiveNumberError'
+  },
+  negativeNumber: {
+    test: ({negativeNumber}) => negativeNumber === true,
+    validate: ({value}) => (/^\d*$/.test(value) && Math.sign(value) <= 0),
+    defaultErrorMessage: 'negative number',
+    errorMessageProp: 'negativeNumberError'
+  },
   textLength: {
     test: ({minLength, maxLength}) => (
       typeof minLength !== 'undefined' ||
@@ -44,7 +56,7 @@ const validators = {
       : (typeof minLength !== 'undefined')
         ? `min length is ${minLength}`
         : `max length is ${maxLength}`,
-    errorMessageProp: 'lengthError',
+    errorMessageProp: 'lengthError'
   },
   confirmPassword: {
     test: ({confirmPasswordRef}) => (typeof confirmPasswordRef !== 'undefined'),
@@ -81,7 +93,9 @@ export const inputValidators = [
   validators.textLength,
   validators.confirmPassword,
   validators.pattern,
-  validators.asyncValidation
+  validators.asyncValidation,
+  validators.positiveNumber,
+  validators.negativeNumber
 ]
 
 export default validators
