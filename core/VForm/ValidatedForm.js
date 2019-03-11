@@ -114,10 +114,16 @@ class ValidatedForm extends Component<FormProps, FormState> {
     })
   }
 
+  setValues = (state:Object = {}) => {
+    this.setState(state)
+  }
+
+
   render() {
     const controlledChildren = this.getControlledChildren(this.props)
       .map((child, index) => {
         const {name} = child.props
+
         return React.cloneElement(child, {
           key: index,
           onChange: (event: any) => this.onChildChange(event, name, index),

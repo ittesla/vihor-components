@@ -46,7 +46,7 @@ class VButton extends Component<ButtonProps> {
     if (typeof renderFunc === 'function') {
       return renderFunc()
     } else if (typeof Icon !== 'undefined') {
-      return <Icon iconSize={iconSize} iconColor={iconColor}/>
+      return <Icon size={iconSize} color={iconColor}/>
     }
 
     return null
