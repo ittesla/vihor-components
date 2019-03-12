@@ -7,7 +7,7 @@ class IconWater extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'group-361'
+    this.name = 'water'
   }
 }
 

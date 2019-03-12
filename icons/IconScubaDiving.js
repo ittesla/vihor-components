@@ -7,7 +7,7 @@ class IconScubaDiving extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'water-scuba-diving'
+    this.name = 'water-scuba-diving-1'
   }
 }
 

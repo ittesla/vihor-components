@@ -7,7 +7,7 @@ class IconBicycle extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'group-779'
+    this.name = 'road-bycicle'
   }
 }
 

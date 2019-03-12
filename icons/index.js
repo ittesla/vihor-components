@@ -101,6 +101,22 @@ import IconPause from './IconPause'
 import IconArchive from './IconArchive'
 import IconLighting from './IconLighting'
 import IconLayers from './IconLayers'
+import IconBangijumping from './IconBangijumping'
+import IconCameraVintage from './IconCameraVintage'
+import IconWaypoints from './IconWaypoints'
+import IconUrban from './IconUrban'
+import IconUrbanFootball from './IconUrbanFootball'
+import IconWorkout from './IconWorkout'
+import IconParkour from './IconParkour'
+import IconSkateboarding from './IconSkateboarding'
+import IconBmx from './IconBmx'
+import IconMap from './IconMap'
+import IconStop from './IconStop'
+import IconClaim from './IconClaim'
+import IconClaimed from './IconClaimed'
+import IconSquareRound from './IconSquareRound'
+import IconChallenges from './IconChallenges'
+import IconChallengesInverse from './IconChallengesInverse'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -205,3 +221,19 @@ export {IconPause}
 export {IconArchive}
 export {IconLighting}
 export {IconLayers}
+export {IconBangijumping}
+export {IconCameraVintage}
+export {IconWaypoints}
+export {IconUrban}
+export {IconUrbanFootball}
+export {IconWorkout}
+export {IconParkour}
+export {IconSkateboarding}
+export {IconBmx}
+export {IconMap}
+export {IconStop}
+export {IconClaim}
+export {IconClaimed}
+export {IconSquareRound}
+export {IconChallenges}
+export {IconChallengesInverse}

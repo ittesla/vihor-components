@@ -7,7 +7,7 @@ class IconSky extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'group-364'
+    this.name = 'sky'
   }
 }
 

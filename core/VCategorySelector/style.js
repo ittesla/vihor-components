@@ -37,7 +37,8 @@ const categoryContainer = {
 const itemText = {
   color: colorSectionHeaderTitle,
   fontSize: scale(31),
-  marginTop: verticalScale(15)
+  marginTop: verticalScale(15),
+  textAlign: 'center'
 }
 
 const itemTextSelected = {

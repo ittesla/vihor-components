@@ -7,7 +7,7 @@ class IconOldTimer extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'group-778'
+    this.name = 'road-oldtimer'
   }
 }
 

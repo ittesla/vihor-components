@@ -7,7 +7,7 @@ class IconDirt extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'group-372'
+    this.name = 'dirt'
   }
 }
 
