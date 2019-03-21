@@ -117,6 +117,10 @@ import IconClaimed from './IconClaimed'
 import IconSquareRound from './IconSquareRound'
 import IconChallenges from './IconChallenges'
 import IconChallengesInverse from './IconChallengesInverse'
+import IconFilledPlay from './IconFilledPlay'
+import IconFilledCircleMinus from './IconFilledCircleMinus'
+import IconFilledCirclePlay from './IconFilledCirclePlay'
+import IconFilledCirclePlus from './IconFilledCirclePlus'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -237,3 +241,7 @@ export {IconClaimed}
 export {IconSquareRound}
 export {IconChallenges}
 export {IconChallengesInverse}
+export {IconFilledPlay}
+export {IconFilledCircleMinus}
+export {IconFilledCirclePlay}
+export {IconFilledCirclePlus}
