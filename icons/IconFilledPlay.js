@@ -7,7 +7,7 @@ class IconFilledPlay extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'filled-play'
+    this.name = 'full-play'
   }
 }
 

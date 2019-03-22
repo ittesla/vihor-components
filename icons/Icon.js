@@ -10,7 +10,8 @@ const FontelloIcon = createIconSetFromFontello(fontelloConfig);
 
 export type IconProps = {
   color: any,
-  size: number
+  size: number,
+  style?: any
 }
 
 class Icon extends Component<IconProps> {
@@ -32,6 +33,7 @@ class Icon extends Component<IconProps> {
         size={this.size || this.props.size}
         color={this.props.color}
         name={this.name}
+        style={this.props.style}
       />
     )
   }

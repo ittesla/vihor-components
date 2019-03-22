@@ -1814,7 +1814,7 @@
     },
     {
       "uid": "acec977a693899b63566d4e704d381df",
-      "css": "group-865",
+      "css": "round-fill",
       "code": 59522,
       "src": "custom_icons",
       "selected": true,
@@ -1823,7 +1823,7 @@
         "width": 1000
       },
       "search": [
-        "group-865"
+        "round-fill"
       ]
     },
     {

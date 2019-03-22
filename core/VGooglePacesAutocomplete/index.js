@@ -22,7 +22,8 @@ type Props = {
   errorMessage?: string,
   valid?: boolean,
   onFocus?: Function,
-  value?: Object
+  value?: Object,
+  onBlur?: Function
 }
 
 type State = {
@@ -41,7 +42,6 @@ class VGooglePlacesAutocomplete extends Component<Props, State> {
     handleTextChange: Function,
     fetchDetails: Function
   ) => {
-    console.log(item)
     const result = await fetchDetails(item.place_id)
     this.props.onChange({
       ...item,
@@ -50,6 +50,9 @@ class VGooglePlacesAutocomplete extends Component<Props, State> {
     handleTextChange(item.description)
 
     this.setState({forceHide: true, select: true})
+    if (typeof this.props.onBlur === 'function') {
+      this.props.onBlur()
+    }
   }
 
   onBlur = (handleTextChange: Function) => {
@@ -58,6 +61,9 @@ class VGooglePlacesAutocomplete extends Component<Props, State> {
       handleTextChange('')
     }
     this.setState({select: false})
+    if (typeof this.props.onBlur === 'function') {
+      this.props.onBlur()
+    }
   }
 
   onFocus = () => {

@@ -13,14 +13,14 @@ const container = {
 }
 
 const itemsContainer = {
-  maxHeight: verticalScale(200),
+  maxHeight: verticalScale(400),
   backgroundColor: white
 }
 
 const itemsWrapper = {
   paddingVertical: scale(20),
   top: scale(120),
-  maxHeight: verticalScale(200),
+  maxHeight: verticalScale(400),
   width: '100%',
   position: 'absolute',
   shadowColor: black,
