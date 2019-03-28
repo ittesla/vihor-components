@@ -13,7 +13,10 @@ type Props = {
 }
 
 const CommentHeader = ({comment, onAvatarPress}: Props) => (
-  <TouchableOpacity onPress={onAvatarPress}>
+  <TouchableOpacity
+    onPress={onAvatarPress}
+    disabled={(typeof onAvatarPress !== 'function')}
+  >
     <View style={styles.commentHeaderContainer}>
       <VProfileImage.Image
         source={

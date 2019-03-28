@@ -93,9 +93,9 @@ export const inputValidators = [
   validators.textLength,
   validators.confirmPassword,
   validators.pattern,
-  validators.asyncValidation,
   validators.positiveNumber,
-  validators.negativeNumber
+  validators.negativeNumber,
+  validators.asyncValidation
 ]
 
 export default validators

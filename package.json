@@ -1,6 +1,6 @@
 {
   "name": "vihor_components",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "moment": "^2.24.0",
+    "react-native-extra-dimensions-android": "^1.2.1",
     "react-native-google-autocomplete": "0.1.5",
     "react-native-modal-datetime-picker": "6.0.0",
     "react-native-radio-buttons-group": "^1.0.7",

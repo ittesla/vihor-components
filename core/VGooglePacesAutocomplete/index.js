@@ -100,7 +100,7 @@ class VGooglePlacesAutocomplete extends Component<Props, State> {
     ) {
       return (
         <View>
-          <VTextInput value={value.description} disabled/>
+          <VTextInput value={value.description} disabled={true}/>
           <TouchableOpacity
             style={styles.crossIconContainer}
             onPress={this.clearLocation}

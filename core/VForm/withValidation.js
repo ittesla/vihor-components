@@ -23,14 +23,15 @@ const withValidation = (validators: Array<any>) => (WrappedComponent: any) => {
           return Promise.resolve(true)
         }
 
-        if (validator instanceof Promise) {
-          return validator
-            .validate(this.props)
-            .then((result) => Promise.resolve(result))
-            .catch(() => Promise.reject(false))
+        if (!(validator instanceof Promise)) {
+          return Promise.resolve(validator.validate(this.props))
         }
 
-        return Promise.resolve(validator.validate(this.props))
+        return validator
+          .validate(this.props)
+          .then((result) => Promise.resolve(result))
+          .catch(() => Promise.reject(false))
+
       })).then((result = []) => {
         this.setState({validating: false})
 

@@ -228,6 +228,7 @@ class VTextInput extends Component<PropTypes, StateProps> {
           onBlur={this.onBlur}
           secureTextEntry={this.state.secureTextEntry}
           onChangeText={this.onChange}
+          editable={!disabled}
         />
         <VHorizontalLine color={borderColor}/>
         {this.renderShowPassword()}
