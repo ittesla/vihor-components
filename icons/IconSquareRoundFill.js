@@ -7,7 +7,7 @@ class IconSquareRoundFill extends Icon {
   constructor(props: IconProps) {
     super(props)
 
-    this.name = 'round-fill'
+    this.name = 'group-1384-(2)'
   }
 }
 

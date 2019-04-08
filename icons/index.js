@@ -122,6 +122,8 @@ import IconFilledCircleMinus from './IconFilledCircleMinus'
 import IconFilledCirclePlay from './IconFilledCirclePlay'
 import IconFilledCirclePlus from './IconFilledCirclePlus'
 import IconSquareRoundFill from './IconSquareRoundFill'
+import IconStopFilled from './IconStopFilled'
+import IconScooter from './IconScooter'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -247,3 +249,5 @@ export {IconFilledCircleMinus}
 export {IconFilledCirclePlay}
 export {IconFilledCirclePlus}
 export {IconSquareRoundFill}
+export {IconStopFilled}
+export {IconScooter}

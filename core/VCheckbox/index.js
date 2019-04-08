@@ -3,7 +3,7 @@
 import React, {Component} from 'react'
 import {View, TouchableOpacity} from 'react-native'
 import {
-  colorPrimaryBg,
+  colorPrimaryBg, colorSectionHeaderTitle,
   white
 } from 'vihor_components/themes/default/colors'
 import styles, {iconSize} from './style'
@@ -17,7 +17,8 @@ type Props = {
   style?: any,
   textStyle?: any,
   value?: boolean,
-  onChange?: Function
+  onChange?: Function,
+  inactiveColorBg?: any
 }
 
 type Stete = {
@@ -56,6 +57,7 @@ class VCheckbox extends Component<Props, Stete> {
     const {
       title,
       activeColorBg = colorPrimaryBg,
+      inactiveColorBg=colorSectionHeaderTitle,
       activeCheck = white,
       style,
       textStyle
@@ -75,12 +77,15 @@ class VCheckbox extends Component<Props, Stete> {
         <View
           style={[
             styles.checkContainer,
-            {backgroundColor, borderColor: activeColorBg}
+            {
+              backgroundColor,
+              borderColor: (checked === true) ? activeColorBg : inactiveColorBg
+            }
           ]}
         >
           <IconCheck
             size={iconSize}
-            color={(checked === true) ? activeCheck : activeColorBg}
+            color={(checked === true) ? activeCheck : inactiveColorBg}
           />
         </View>
 
