@@ -17,6 +17,8 @@ type Props = {
   onPostComment?: Function,
   onPostCommentLabelPress?: Function,
   onPostShare?: Function,
+  onPostShareLabelPress?: Function,
+  onMoreOptions?: Function,
   onOwnerPress?: Function,
   showOwner?: boolean,
   style: any,
@@ -33,6 +35,8 @@ const Post = (
     onPostComment,
     onPostCommentLabelPress,
     onPostShare,
+    onPostShareLabelPress,
+    onMoreOptions,
     onOwnerPress,
     showOwner,
     style,
@@ -54,6 +58,8 @@ const Post = (
       onPostComment={onPostComment}
       onPostCommentLabelPress={onPostCommentLabelPress}
       onPostShare={onPostShare}
+      onPostShareLabelPress={onPostShareLabelPress}
+      onMoreOptions={onMoreOptions}
     />
   </View>
 )

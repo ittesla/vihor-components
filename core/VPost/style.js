@@ -82,6 +82,13 @@ const actionItem = {
   alignItems: 'center'
 }
 
+const actionEndItem = {
+  ...actionItem,
+  flex: 1,
+  paddingHorizontal: 0,
+  justifyContent: 'flex-end'
+}
+
 const footerDetails = {
   flexDirection: 'row',
   height: verticalScale(100),
@@ -97,6 +104,13 @@ const footerDetails = {
   shadowOpacity: 0.16,
   shadowRadius: verticalScale(16),
   elevation: verticalScale(5)
+}
+
+const footerSubDetails = {
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-around'
 }
 
 const footerNumberAndText = {
@@ -142,7 +156,9 @@ export default StyleSheet.create({
   actionItemBorder,
   footerPriceText,
   actionItem,
+  actionEndItem,
   footerDetails,
+  footerSubDetails,
   footerNumberAndText,
   link,
   footerStatusRunning

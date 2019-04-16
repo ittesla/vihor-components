@@ -18,7 +18,7 @@ import {
   IconBubble,
   IconSharePost
 } from '../../icons'
-import {Like, Comment, Share} from '../VSocialActionButtons'
+import {Like, Comment, Share, Options} from '../VSocialActionButtons'
 import VLink from '../VLink'
 
 type Props = {
@@ -27,7 +27,8 @@ type Props = {
   onPostLikeLabelPress?: Function,
   onPostComment?: Function,
   onPostCommentLabelPress?: Function,
-  onPostShare?: Function
+  onPostShare?: Function,
+  onPostShareLabelPress?: Function
 }
 
 type PriceProps = { price: number, status: string }
@@ -91,19 +92,21 @@ const renderLikesLabel = (post) => {
 const PostFooter = (
   {
     post,
+    onMoreOptions,
     onPostLike,
     onPostComment,
     onPostShare,
+    onPostShareLabelPress,
     onPostLikeLabelPress,
     onPostCommentLabelPress
   }: Props
 ) => (
   <React.Fragment>
     <View style={styles.footerDetails}>
-      <TouchableOpacity onPress={onPostLikeLabelPress}>
+      <TouchableOpacity onPress={onPostLikeLabelPress} style={{flex: 1}}>
         {renderLikesLabel(post)}
       </TouchableOpacity>
-      <View>
+      <View style={styles.footerSubDetails}>
         <TouchableOpacity
           onPress={onPostCommentLabelPress}
           style={styles.footerNumberAndText}
@@ -116,6 +119,19 @@ const PostFooter = (
               } `}
           </VText>
           <VText>Comments</VText>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={onPostShareLabelPress}
+          style={styles.footerNumberAndText}
+        >
+          <VText style={styles.link}>
+            {` ${
+              (typeof post.sharesCount !== 'undefined')
+                ? post.sharesCount
+                : ''
+              } `}
+          </VText>
+          <VText>Shares</VText>
         </TouchableOpacity>
       </View>
     </View>
@@ -138,9 +154,18 @@ const PostFooter = (
         />
       </View>
 
-      {/*<TouchableOpacity onPress={onPostShare} style={styles.actionItem}>*/}
-      {/*<Share></Share>*/}
-      {/*</TouchableOpacity>*/}
+      <View style={styles.actionItem}>
+        <Share
+          active={post.isShared}
+          onPostShare={onPostShare}
+        />
+      </View>
+
+      <View style={styles.actionEndItem}>
+        <Options 
+          onMoreOptions={onMoreOptions}
+        />
+      </View> 
     </View>
   </React.Fragment>
 )
