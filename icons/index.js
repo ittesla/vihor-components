@@ -124,6 +124,8 @@ import IconFilledCirclePlus from './IconFilledCirclePlus'
 import IconSquareRoundFill from './IconSquareRoundFill'
 import IconStopFilled from './IconStopFilled'
 import IconScooter from './IconScooter'
+import IconContextMenu from './IconContextMenu'
+import IconTrash from './IconTrash'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -251,3 +253,5 @@ export {IconFilledCirclePlus}
 export {IconSquareRoundFill}
 export {IconStopFilled}
 export {IconScooter}
+export {IconContextMenu}
+export {IconTrash}

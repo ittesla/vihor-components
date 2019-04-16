@@ -7,6 +7,7 @@ import PostHeader from './PostHeader'
 // import FeedContent from '../feedContent'
 import PostFooter from './PostFooter'
 import type {Post as PostType} from './types'
+import type {Option} from '../VSocialActionButtons/Options'
 
 type Props = {
   post: PostType,
@@ -18,7 +19,7 @@ type Props = {
   onPostCommentLabelPress?: Function,
   onPostShare?: Function,
   onPostShareLabelPress?: Function,
-  onMoreOptions?: Function,
+  moreOptions?: Array<Option>,
   onOwnerPress?: Function,
   showOwner?: boolean,
   style: any,
@@ -36,7 +37,7 @@ const Post = (
     onPostCommentLabelPress,
     onPostShare,
     onPostShareLabelPress,
-    onMoreOptions,
+    moreOptions,
     onOwnerPress,
     showOwner,
     style,
@@ -59,7 +60,7 @@ const Post = (
       onPostCommentLabelPress={onPostCommentLabelPress}
       onPostShare={onPostShare}
       onPostShareLabelPress={onPostShareLabelPress}
-      onMoreOptions={onMoreOptions}
+      moreOptions={moreOptions}
     />
   </View>
 )

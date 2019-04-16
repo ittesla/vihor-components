@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native'
-import {scale} from '../../viewHelper'
+import {scale, verticalScale} from '../../viewHelper'
 import {
   colorBadgeBg,
   colorSectionHeaderTitle
@@ -11,8 +11,14 @@ const actionItemText = {
   color: colorSectionHeaderTitle
 }
 
+const contextMenuItem = {
+  ...actionItemText,
+  paddingVertical: verticalScale(15)
+}
+
 export default StyleSheet.create({
-  actionItemText
+  actionItemText,
+  contextMenuItem
 })
 
 export const actionIconSize = scale(50)

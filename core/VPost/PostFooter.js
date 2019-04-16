@@ -20,6 +20,7 @@ import {
 } from '../../icons'
 import {Like, Comment, Share, Options} from '../VSocialActionButtons'
 import VLink from '../VLink'
+import type {Option} from '../VSocialActionButtons/Options'
 
 type Props = {
   post: Post,
@@ -28,7 +29,8 @@ type Props = {
   onPostComment?: Function,
   onPostCommentLabelPress?: Function,
   onPostShare?: Function,
-  onPostShareLabelPress?: Function
+  onPostShareLabelPress?: Function,
+  moreOptions?: Array<Option>
 }
 
 type PriceProps = { price: number, status: string }
@@ -92,7 +94,7 @@ const renderLikesLabel = (post) => {
 const PostFooter = (
   {
     post,
-    onMoreOptions,
+    moreOptions,
     onPostLike,
     onPostComment,
     onPostShare,
@@ -127,7 +129,7 @@ const PostFooter = (
           <VText style={styles.link}>
             {` ${
               (typeof post.sharesCount !== 'undefined')
-                ? post.sharesCount
+                ? `${post.sharesCount}`
                 : ''
               } `}
           </VText>
@@ -162,9 +164,7 @@ const PostFooter = (
       </View>
 
       <View style={styles.actionEndItem}>
-        <Options 
-          onMoreOptions={onMoreOptions}
-        />
+        <Options options={moreOptions}/>
       </View> 
     </View>
   </React.Fragment>

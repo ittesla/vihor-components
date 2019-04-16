@@ -17,6 +17,8 @@ export type Post = {
   lastLikers?: Array<any>,
   badgeColor?: any,
   showOwner?: boolean,
-  ownerName?: string
+  ownerName?: string,
+  sharesCount?: number,
+  isShared?: boolean
 }
 
