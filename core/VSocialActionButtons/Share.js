@@ -2,7 +2,7 @@
 
 import React from 'react'
 import styles, {actionIconColor, actionIconSize} from './style'
-import { IconShare} from '../../icons'
+import { IconReply, IconReplyInverse} from '../../icons'
 import VText from '../VText'
 import {TouchableOpacity} from 'react-native'
 
@@ -13,8 +13,7 @@ type Props = {
 
 const Share = ({active, onPostShare}: Props
 ) => {
-  // const Icon = (active === true) ? IconBubbleInverse : IconBubble
-  const Icon = (active === true) ? IconShare : IconShare // DO INVERSE AND PROPER ICON
+  const Icon = (active === true) ? IconReplyInverse : IconReply
   return (
     <React.Fragment>
       <TouchableOpacity
