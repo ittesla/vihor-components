@@ -38,8 +38,8 @@ const Options = ({options}: Props) => {
       </MenuTrigger>
       <MenuOptions>
         {
-          options.map(({title, render, ...option}) => (
-            <MenuOption {...option}>
+          options.map(({title, render, ...option}, index) => (
+            <MenuOption {...option} key={`contextMenuItem${index}`}>
               {
                 (typeof render === 'function')
                   ? render()

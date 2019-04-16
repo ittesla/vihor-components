@@ -63,6 +63,7 @@ export const badgeIconSizes = {
 }
 
 export const sizes = {
+  xxs: verticalScale(90),
   xs: verticalScale(104),
   s: verticalScale(145),
   m: verticalScale(165),
