@@ -1,14 +1,14 @@
 // @flow
 
 import React from 'react'
-import {View, TouchableOpacity, Text} from 'react-native'
+import { View, TouchableOpacity, Text } from 'react-native'
 import styles, {
   priceIconColor,
   priceIconSize,
   actionIconSize,
   actionIconColor
 } from './style'
-import type {Post} from './types'
+import type { Post } from './types'
 import VText from '../VText'
 import {
   IconPriceDown,
@@ -18,9 +18,9 @@ import {
   IconBubble,
   IconSharePost
 } from '../../icons'
-import {Like, Comment, Share, Options} from '../VSocialActionButtons'
+import { Like, Comment, Share, Options } from '../VSocialActionButtons'
 import VLink from '../VLink'
-import type {Option} from '../VSocialActionButtons/Options'
+import type { Option } from '../VSocialActionButtons/Options'
 
 type Props = {
   post: Post,
@@ -35,9 +35,9 @@ type Props = {
 
 type PriceProps = { price: number, status: string }
 
-const Price = ({price, status = 'finished'}: PriceProps) => {
+const Price = ({ price, status = 'finished' }: PriceProps) => {
   const iconProps = (status === 'active')
-    ? (<View style={styles.footerStatusRunning}/>)
+    ? (<View style={styles.footerStatusRunning} />)
     : null
 
   return (
@@ -46,7 +46,7 @@ const Price = ({price, status = 'finished'}: PriceProps) => {
       <VText style={styles.footerPriceText}>
         {`${price.toFixed(2)} exp`}
       </VText>
-      <View style={[styles.actionItemBorder]}/>
+      <View style={[styles.actionItemBorder]} />
     </React.Fragment>
   )
 }
@@ -103,71 +103,86 @@ const PostFooter = (
     onPostCommentLabelPress
   }: Props
 ) => (
-  <React.Fragment>
-    <View style={styles.footerDetails}>
-      <TouchableOpacity onPress={onPostLikeLabelPress} style={{flex: 1}}>
-        {renderLikesLabel(post)}
-      </TouchableOpacity>
-      <View style={styles.footerSubDetails}>
-        <TouchableOpacity
-          onPress={onPostCommentLabelPress}
-          style={styles.footerNumberAndText}
-        >
-          <VText style={styles.link}>
-            {` ${
-              (typeof post.commentsCount !== 'undefined')
-                ? post.commentsCount
-                : ''
-              } `}
-          </VText>
-          <VText>Comments</VText>
+    <React.Fragment>
+      <View style={styles.footerDetails}>
+        <TouchableOpacity onPress={onPostLikeLabelPress} style={{ flex: 1 }}>
+          {renderLikesLabel(post)}
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onPostShareLabelPress}
-          style={styles.footerNumberAndText}
-        >
-          <VText style={styles.link}>
-            {` ${
-              (typeof post.sharesCount !== 'undefined')
-                ? `${post.sharesCount}`
-                : ''
-              } `}
-          </VText>
-          <VText>Shares</VText>
-        </TouchableOpacity>
-      </View>
-    </View>
-    <View style={styles.footerContainer}>
-      <Price
-        price={post.price || 0}
-        status={post.status || ''}
-      />
-      <View style={styles.actionItem}>
-        <Like
-          active={post.isLiked}
-          onPostLike={onPostLike}
-        />
-      </View>
+        <View style={[styles.footerSubDetails,
+        {
+          justifyContent: (post.sharesCount &&
+            typeof onPostShareLabelPress === 'function') ?
+            'space-around' :
+            'flex-end'
+        }
+        ]}>
+          <TouchableOpacity
+            onPress={onPostCommentLabelPress}
+            style={styles.footerNumberAndText}
+          >
+            <VText style={styles.link}>
+              {` ${
+                (typeof post.commentsCount !== 'undefined')
+                  ? post.commentsCount
+                  : ''
+                } `}
+            </VText>
+            <VText>Comments</VText>
+          </TouchableOpacity>
+          {
+            (post.sharesCount && typeof onPostShareLabelPress === 'function') ?
+              <TouchableOpacity
+                onPress={onPostShareLabelPress}
+                style={styles.footerNumberAndText}
+              >
+                <VText style={styles.link}>
+                  {` ${
+                    (typeof post.sharesCount !== 'undefined')
+                      ? `${post.sharesCount}`
+                      : 0
+                    } `}
+                </VText>
+                <VText>Shares</VText>
+              </TouchableOpacity> :
+              null
+          }
 
-      <View style={styles.actionItem}>
-        <Comment
-          active={post.isCommented}
-          onPostComment={onPostComment}
-        />
+        </View>
       </View>
-
-      <View style={styles.actionItem}>
-        <Share
-          active={post.isShared}
-          onPostShare={onPostShare}
+      <View style={styles.footerContainer}>
+        <Price
+          price={post.price || 0}
+          status={post.status || ''}
         />
-      </View>
+        <View style={styles.actionItem}>
+          <Like
+            active={post.isLiked}
+            onPostLike={onPostLike}
+          />
+        </View>
 
-      <View style={styles.actionEndItem}>
-        <Options options={moreOptions}/>
-      </View> 
-    </View>
-  </React.Fragment>
-)
+        <View style={styles.actionItem}>
+          <Comment
+            active={post.isCommented}
+            onPostComment={onPostComment}
+          />
+        </View>
+        {
+          typeof onPostShare === 'function' &&
+          <View style={styles.actionItem}>
+            <Share
+              active={post.isShared}
+              onPostShare={onPostShare}
+            />
+          </View>
+        }
+
+
+        <View style={styles.actionEndItem}>
+          <Options options={moreOptions} />
+        </View>
+      </View>
+    </React.Fragment>
+  )
 
 export default PostFooter

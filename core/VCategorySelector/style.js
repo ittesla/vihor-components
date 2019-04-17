@@ -31,6 +31,7 @@ const categoryItemSelected = {
 
 const categoryContainer = {
   flexDirection: 'row',
+  justifyContent: 'center',
   flexWrap: 'wrap'
 }
 
