@@ -28,7 +28,7 @@ const PostHeader = (
               ? {uri: post.avatarImageUrl}
               : post.avatarImageUrl
           }
-          size={VProfileImage.ImageSizes.xs}
+          size={VProfileImage.ImageSizes.ms}
           withBadge={post.withBadge}
           badgeColor={post.badgeColor}
         />

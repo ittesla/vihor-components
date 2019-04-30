@@ -19,6 +19,7 @@ import {colorBadgeBg} from 'vihor_components/themes/default/colors'
 export const ImageSizes = {
   xxs: 'xxs',
   xs: 'xs',
+  ms: 'ms',
   s: 's',
   m: 'm',
   l: 'l',
