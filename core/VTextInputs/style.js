@@ -49,7 +49,7 @@ const searchInputWrapper = {
 }
 
 const withPasswordShow = {
-  width: SCREEN_WIDTH - scale(40)
+  // width: SCREEN_WIDTH - scale(40)
 }
 
 const errorMessagesContainer = {
