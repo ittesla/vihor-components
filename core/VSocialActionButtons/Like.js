@@ -8,10 +8,14 @@ import {TouchableOpacity} from 'react-native'
 
 type Props = {
   active: boolean,
-  onPostLike?: Function
+  onPostLike?: Function,
+  count?: Number,
+  onPostLikeLabelPress?: Function
 }
 
-const Like = ({active, onPostLike}: Props) => {
+const Like = (
+  {active, onPostLike, count, onPostLikeLabelPress}: Props
+) => {
   const Icon = (active === true) ? IconLikeInverse : IconLike
 
   return (
@@ -26,6 +30,14 @@ const Like = ({active, onPostLike}: Props) => {
             (active === true) ? actionIconColor.selected : actionIconColor.empty
           }
         />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={onPostLikeLabelPress}
+        disabled={(typeof onPostLikeLabelPress !== 'function')}
+      >
+        <VText style={styles.actionItemText}>
+          {count} {(count === 1) ? 'Like' : 'Likes'}
+        </VText>
       </TouchableOpacity>
     </React.Fragment>
   )

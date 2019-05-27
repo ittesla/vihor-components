@@ -8,6 +8,7 @@ import CommentFooter from './CommentFooter'
 import VText from '../VText'
 import ViewMoreText from '../../helpers/ViewMoreText/index'
 import type {Comment as CommentType} from './types'
+import type {Option} from '../VSocialActionButtons/Options'
 
 type Props = {
   comment: CommentType,
@@ -17,7 +18,8 @@ type Props = {
   onCommentShare?: Function,
   onSeeRepliesLabel?: Function,
   onCommentLikeLabelPress?: Function,
-  isReply?: boolean
+  isReply?: boolean,
+  commentHeaderOptions?: Array<Option>,
 }
 
 type State = {
@@ -52,7 +54,8 @@ class Comment extends Component<Props, State> {
       onCommentLike,
       onCommentShare,
       onSeeRepliesLabel,
-      onCommentLikeLabelPress
+      onCommentLikeLabelPress,
+      commentHeaderOptions
     } = this.props
 
     const commentStyle = [styles.commentContainer]
@@ -67,6 +70,7 @@ class Comment extends Component<Props, State> {
         <CommentHeader
           comment={comment}
           onAvatarPress={onAvatarPress}
+          moreOptions={commentHeaderOptions}
         />
         <View style={
           [

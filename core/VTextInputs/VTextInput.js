@@ -209,27 +209,32 @@ class VTextInput extends Component<PropTypes, StateProps> {
       props.pointerEvents = 'none'
     }
 
+    const isNotPress = (typeof this.props.onPress !== 'function')
+    const wrapperPrps = (!isNotPress) ? {pointerEvents: 'none'} : {}
+
     return (
       <TouchableOpacity
         {...props}
         onPress={this.props.onPress}
-        disabled={(typeof this.props.onPress !== 'function')}
+        disabled={isNotPress}
       >
-        <TextInput
-          {...textInputProps}
-          ref={this.props.forwardedRef}
-          placeholder={placeholder}
-          style={textInputStyles}
-          value={value}
-          underlineColorAndroid='transparent'
-          placeholderTextColor={colorPlaceholderText}
-          selectionColor={colorActive}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          secureTextEntry={this.state.secureTextEntry}
-          onChangeText={this.onChange}
-          editable={!disabled}
-        />
+        <View {...wrapperPrps}>
+          <TextInput
+            {...textInputProps}
+            ref={this.props.forwardedRef}
+            placeholder={placeholder}
+            style={textInputStyles}
+            value={value}
+            underlineColorAndroid='transparent'
+            placeholderTextColor={colorPlaceholderText}
+            selectionColor={colorActive}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            secureTextEntry={this.state.secureTextEntry}
+            onChangeText={this.onChange}
+            editable={!disabled}
+          />
+        </View>
         <VHorizontalLine color={borderColor}/>
         {this.renderShowPassword()}
         {this.renderReset()}

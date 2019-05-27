@@ -85,6 +85,13 @@ const commentTextInReply = {
   paddingLeft: scale(30)
 }
 
+const actionEndItem = {
+  ...actionItem,
+  flex: 1,
+  paddingHorizontal: 0,
+  justifyContent: 'flex-end'
+}
+
 export default StyleSheet.create({
   commentContainer,
   commentHeaderContainer,
@@ -92,6 +99,7 @@ export default StyleSheet.create({
   commentHeaderUserName,
   commentHeaderPublishTime,
   actionItem,
+  actionEndItem,
   commentFooter,
   continueReadingWrapper,
   commentText,

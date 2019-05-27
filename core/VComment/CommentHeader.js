@@ -6,13 +6,16 @@ import styles from './style'
 import VProfileImage from '../VProfileImage'
 import VText from '../VText'
 import type {Comment} from './types'
+import { Options } from '../VSocialActionButtons'
+import type { Option } from '../VSocialActionButtons/Options'
 
 type Props = {
   comment: Comment,
-  onAvatarPress?: Function
+  onAvatarPress?: Function,
+  moreOptions?: Array<Option>
 }
 
-const CommentHeader = ({comment, onAvatarPress}: Props) => (
+const CommentHeader = ({comment, onAvatarPress, moreOptions}: Props) => (
   <TouchableOpacity
     onPress={onAvatarPress}
     disabled={(typeof onAvatarPress !== 'function')}
@@ -36,8 +39,8 @@ const CommentHeader = ({comment, onAvatarPress}: Props) => (
           {comment.publishTime}
         </VText>
       </View>
-      <View>
-        <VText>...</VText>
+      <View style={styles.actionEndItem}>
+        <Options options={moreOptions} />
       </View>
     </View>
   </TouchableOpacity>

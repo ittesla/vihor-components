@@ -1,12 +1,12 @@
 // @flow
 
-import React, { Component } from 'react'
-import { View, TouchableOpacity } from 'react-native'
+import React, {Component} from 'react'
+import {View, TouchableOpacity} from 'react-native'
 import {
   colorPrimaryBg, colorSectionHeaderTitle,
   white
 } from 'vihor_components/themes/default/colors'
-import styles, { iconSize } from './style'
+import styles, {iconSize} from './style'
 import VText from '../VText'
 import IconCheck from '../../icons/IconCheck'
 
@@ -37,7 +37,7 @@ class VCheckbox extends Component<Props, Stete> {
 
   componentWillReceiveProps(nextProps: Props) {
     if (nextProps.value !== this.props.value) {
-      this.setState({ checked: nextProps.value })
+      this.setState({checked: nextProps.value})
     }
   }
 
@@ -57,13 +57,17 @@ class VCheckbox extends Component<Props, Stete> {
     const {
       title,
       activeColorBg = colorPrimaryBg,
-      inactiveColorBg = colorSectionHeaderTitle,
-      activeCheck = colorPrimaryBg,
+      inactiveColorBg=colorSectionHeaderTitle,
+      activeCheck = white,
       style,
       textStyle
     } = this.props
-    const { checked } = this.state
-    
+    const {checked} = this.state
+
+    const backgroundColor = (checked === true)
+      ? activeColorBg
+      : activeCheck
+
     return (
       <TouchableOpacity
         style={[styles.container, style]}
@@ -74,16 +78,15 @@ class VCheckbox extends Component<Props, Stete> {
           style={[
             styles.checkContainer,
             {
+              backgroundColor,
               borderColor: (checked === true) ? activeColorBg : inactiveColorBg
             }
           ]}
         >
-          {checked === true &&
-            <IconCheck
-              size={iconSize}
-              color={activeColorBg}
-            />
-          }
+          <IconCheck
+            size={iconSize}
+            color={(checked === true) ? activeCheck : inactiveColorBg}
+          />
         </View>
 
       </TouchableOpacity>
