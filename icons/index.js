@@ -20,6 +20,7 @@ import IconEmptyProfileImage from './IconEmptyProfileImage'
 import IconSearch from './IconSearch'
 import IconSearchInverse from './IconSearchInverse'
 import IconPlus from './IconPlus'
+import IconPlusRegular from './IconPlusRegular'
 import IconPriceUp from './IconPriceUp'
 import IconPriceDown from './IconPriceDown'
 import IconLike from './IconLike'
@@ -152,6 +153,7 @@ export {IconEmptyProfileImage}
 export {IconSearch}
 export {IconSearchInverse}
 export {IconPlus}
+export {IconPlusRegular}
 export {IconPriceUp}
 export {IconPriceDown}
 export {IconLike}
