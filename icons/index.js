@@ -33,6 +33,9 @@ import IconLocation from './IconLocation'
 import IconHome from './IconHome'
 import IconHomeInverse from './IconHomeInverse'
 import IconCommunication from './IconCommunication'
+import IconNotification from './IconNotification'
+import IconNotificationRing from './IconNotificationRing'
+import IconCog from './IconCog'
 import IconMenu from './IconMenu'
 import IconFire from './IconFire'
 import IconFlare from './IconFlare'
@@ -161,6 +164,9 @@ export {IconReplyInverse}
 export {IconLocation}
 export {IconHome}
 export {IconCommunication}
+export {IconNotification}
+export {IconNotificationRing}
+export {IconCog}
 export {IconMenu}
 export {IconFire}
 export {IconFlare}
