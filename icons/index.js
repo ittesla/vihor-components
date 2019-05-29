@@ -130,6 +130,7 @@ import IconStopFilled from './IconStopFilled'
 import IconScooter from './IconScooter'
 import IconContextMenu from './IconContextMenu'
 import IconTrash from './IconTrash'
+import IconLogout from './IconLogout'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -263,3 +264,4 @@ export {IconStopFilled}
 export {IconScooter}
 export {IconContextMenu}
 export {IconTrash}
+export {IconLogout}
