@@ -2,9 +2,10 @@
 
 import React from 'react'
 import styles, { actionIconColor, actionIconSize } from './style'
-import { IconLike, IconLikeInverse } from '../../icons'
+import {IconLike, IconLikeInverse} from '../../icons'
+import {HIT_SLOP} from '../../viewHelper'
 import VText from '../VText'
-import { TouchableOpacity } from 'react-native'
+import {TouchableOpacity} from 'react-native'
 
 type Props = {
   active: boolean,
@@ -22,6 +23,7 @@ const Like = (
   return (
     <React.Fragment>
       <TouchableOpacity
+        hitSlop={HIT_SLOP}
         onPress={onPostLike}
         disabled={(typeof onPostLike !== 'function')}
       >

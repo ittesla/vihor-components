@@ -3,6 +3,7 @@
 import React from 'react'
 import styles, {actionIconColor, actionIconSize} from './style'
 import {IconReply, IconReplyInverse} from '../../icons'
+import {HIT_SLOP} from '../../viewHelper'
 import VText from '../VText'
 import {TouchableOpacity} from 'react-native'
 
@@ -18,6 +19,7 @@ const Reply = ({active, count, onSeeReplies, onSeeRepliesLabel}: Props) => {
   return (
     <React.Fragment>
       <TouchableOpacity
+        hitSlop={HIT_SLOP}
         onPress={onSeeReplies}
         disabled={(typeof onSeeReplies !== 'function')}
       >

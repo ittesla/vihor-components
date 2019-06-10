@@ -1,11 +1,11 @@
 // @flow
 
 import React from 'react'
-import {Text, View, Image, TouchableOpacity} from 'react-native'
-import styles, {iconChevron} from './style'
+import { Text, View, Image, TouchableOpacity } from 'react-native'
+import styles, { iconChevron } from './style'
 import VProfileImage from '../VProfileImage'
 import VText from '../VText'
-import type {Post} from './types'
+import type { Post } from './types'
 import IconChevronRight from '../../icons/IconChevronRight'
 
 type Props = {
@@ -15,8 +15,9 @@ type Props = {
   onOwnerPress?: Function
 }
 
+
 const PostHeader = (
-  {post, onAvatarPress, onOwnerPress, showOwner}: Props
+  { post, onAvatarPress, onOwnerPress, showOwner }: Props
 ) => {
   return (
 
@@ -25,7 +26,7 @@ const PostHeader = (
         <VProfileImage.Image
           source={
             (typeof post.avatarImageUrl === 'string')
-              ? {uri: post.avatarImageUrl}
+              ? { uri: post.avatarImageUrl }
               : post.avatarImageUrl
           }
           size={VProfileImage.ImageSizes.ms}
@@ -34,7 +35,7 @@ const PostHeader = (
         />
       </TouchableOpacity>
       <View style={styles.headerUserDetails}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity onPress={onAvatarPress}>
             <VText
               numberOfLines={1}
@@ -46,8 +47,8 @@ const PostHeader = (
           {
             (showOwner === true && post.showOwner === true)
               ? (
-                <TouchableOpacity onPress={onOwnerPress}  style={{flexDirection: 'row', alignItems: 'center'}}>
-                  <IconChevronRight {...iconChevron}/>
+                <TouchableOpacity onPress={onOwnerPress} style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <IconChevronRight {...iconChevron} />
                   <VText
                     numberOfLines={1}
                     style={[styles.headerText, styles.headerTextName]}
@@ -67,25 +68,37 @@ const PostHeader = (
           }
         </View>
         <View style={styles.headerCategoriesContainer}>
-          <VText
-            numberOfLines={1}
-            style={[styles.headerText, styles.headerTextCategories]}
-          >
-            {post.category}
-          </VText>
-          <VText style={styles.headerDots}>&#183;</VText>
-          <VText
-            style={[
-              styles.headerText,
-              styles.headerTextCategories,
-              styles.headerTextSubcategories
-            ]}
-          >
-            {post.subcategory}
-          </VText>
-          <VText style={styles.headerDots}>&#183;</VText>
+          {
+            post.category ?
+              <React.Fragment>
+                <VText
+                  numberOfLines={1}
+                  style={[styles.headerText, styles.headerTextCategories]}
+                >
+                  {post.displayCategory || post.category}
+                </VText>
+                <VText style={styles.headerDots}>&#183;</VText>
+              </React.Fragment> :
+              null
+          }
+          {
+            post.subcategory ?
+              <React.Fragment>
+                <VText
+                  style={[
+                    styles.headerText,
+                    styles.headerTextCategories,
+                    styles.headerTextSubcategories
+                  ]}
+                >
+                  {post.displaySubcategory || post.subcategory}
+                </VText>
+                <VText style={styles.headerDots}>&#183;</VText>
+              </React.Fragment> :
+              null
+          }
           <VText style={[styles.headerText, styles.headerTextCategories]}>
-            {post.type}
+            {post.displayType || post.type}
           </VText>
         </View>
       </View>

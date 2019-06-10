@@ -3,6 +3,7 @@
 import React from 'react'
 import styles, {actionIconColor, actionIconSize} from './style'
 import {IconBubble, IconBubbleInverse} from '../../icons'
+import {HIT_SLOP} from '../../viewHelper'
 import VText from '../VText'
 import {TouchableOpacity} from 'react-native'
 
@@ -17,6 +18,7 @@ const Comment = ({active, onPostComment}: Props
   return (
     <React.Fragment>
       <TouchableOpacity
+        hitSlop={HIT_SLOP}
         onPress={onPostComment}
         disabled={(typeof onPostComment !== 'function')}
       >

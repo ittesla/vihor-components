@@ -2,7 +2,8 @@
 
 import React from 'react'
 import styles, {actionIconColor, actionIconSize} from './style'
-import { IconReply, IconReplyInverse} from '../../icons'
+import {IconReply, IconReplyInverse} from '../../icons'
+import {HIT_SLOP} from '../../viewHelper'
 import VText from '../VText'
 import {TouchableOpacity} from 'react-native'
 
@@ -17,6 +18,7 @@ const Share = ({active, onPostShare}: Props
   return (
     <React.Fragment>
       <TouchableOpacity
+        hitSlop={HIT_SLOP}
         onPress={onPostShare}
         disabled={(typeof onPostShare !== 'function')}
       >
