@@ -44,6 +44,7 @@ const CommentFooter = (
       style={styles.actionItem}
     >
       <Like
+        withLabel={true}
         active={comment.isLiked}
         count={comment.likesCount}
         onPostLikeLabelPress={onCommentLikeLabelPress}

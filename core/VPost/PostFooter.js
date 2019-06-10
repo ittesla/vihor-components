@@ -62,6 +62,8 @@ const renderLikesLabel = (post) => {
 
   if (last !== null) {
     lastName = `${last.userFirstName} ${last.userLastName}`
+    lastName = lastName.length > 15 ? last.userFirstName : lastName;
+    lastName = lastName.length > 15 ? lastName.substring(0, 15) + '...' : lastName;
 
     if (post.likesCount > 1) {
       lastName += ' and'
