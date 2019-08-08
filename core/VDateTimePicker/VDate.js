@@ -1,7 +1,7 @@
 //@flow
 
-import React, {Component} from 'react'
-import {View, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react'
+import { View, TouchableOpacity } from 'react-native';
 import {
   colorActive,
   colorBadgeBg,
@@ -11,9 +11,9 @@ import {
 } from '../../themes/default/colors';
 import VHorizontalLine from '../VHorizontalLine';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import styles, {iconCalendar} from './style';
+import styles, { iconCalendar } from './style';
 import VText from '../VText'
-import {IconCalendarEmpty} from '../../icons'
+import { IconCalendarEmpty } from '../../icons'
 import moment from 'moment'
 import IconWatch from 'vihor_components/icons/IconWatch';
 
@@ -26,6 +26,7 @@ type Props = {
   style?: any,
   disabled?: boolean,
   minimumDate?: Date,
+  maximumDate?: Date,
   onChange?: Function
 }
 
@@ -34,7 +35,7 @@ type State = {
   date: Date,
 }
 
-class VDate extends Component <Props, State> {
+class VDate extends Component<Props, State> {
   static defaultProps = {
     valid: true
   }
@@ -52,7 +53,7 @@ class VDate extends Component <Props, State> {
 
   componentWillReceiveProps(nextProps: Props) {
     if (+nextProps.value !== +this.props.value) {
-      this.setState({date: nextProps.value})
+      this.setState({ date: nextProps.value })
     }
   }
 
@@ -63,16 +64,16 @@ class VDate extends Component <Props, State> {
   }
 
   handleDatePicked = (date: Date) => {
-    if (typeof this.props.onChange ==='function') {
+    if (typeof this.props.onChange === 'function') {
       this.props.onChange(date)
-      this.setState({isDateTimePickerVisible: false})
+      this.setState({ isDateTimePickerVisible: false })
     } else {
-      this.setState({isDateTimePickerVisible: false, date})
+      this.setState({ isDateTimePickerVisible: false, date })
     }
   }
 
   hideDateTimePicker = () => {
-    this.setState({isDateTimePickerVisible: false})
+    this.setState({ isDateTimePickerVisible: false })
   }
 
   renderErrorMessage() {
@@ -108,7 +109,8 @@ class VDate extends Component <Props, State> {
       value,
       style: customStyle,
       disabled,
-      minimumDate
+      minimumDate,
+      maximumDate
     } = this.props
     let borderColor = colorBorderTextInput
 
@@ -128,17 +130,19 @@ class VDate extends Component <Props, State> {
           <VText style={styles.text}>
             {moment(this.state.date).format('DD/MM/YYYY')}
           </VText>
-          <IconCalendarEmpty  {...iconCalendar}/>
+          <IconCalendarEmpty  {...iconCalendar} />
         </TouchableOpacity>
-        <VHorizontalLine color={borderColor}/>
+        <VHorizontalLine color={borderColor} />
         {this.renderErrorMessage()}
         {this.renderHint()}
         <DateTimePicker
           mode='date'
+          date={this.state.date}
           isVisible={this.state.isDateTimePickerVisible}
           onConfirm={this.handleDatePicked}
           onCancel={this.hideDateTimePicker}
           minimumDate={minimumDate}
+          maximumDate={maximumDate}
         />
       </View>
     )
