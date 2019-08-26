@@ -131,6 +131,7 @@ import IconScooter from './IconScooter'
 import IconContextMenu from './IconContextMenu'
 import IconTrash from './IconTrash'
 import IconLogout from './IconLogout'
+import IconAttachment from './IconAttachment'
 
 export {IconEye}
 export {IconEyeCrossed}
@@ -265,3 +266,4 @@ export {IconScooter}
 export {IconContextMenu}
 export {IconTrash}
 export {IconLogout}
+export {IconAttachment}
