@@ -19,6 +19,9 @@ export type Post = {
   showOwner?: boolean,
   ownerName?: string,
   sharesCount?: number,
-  isShared?: boolean
+  isShared?: boolean,
+  displayCategory: string,
+  displaySubcategory: string,
+  displayType: string
 }
 

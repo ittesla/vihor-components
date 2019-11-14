@@ -4,17 +4,16 @@ import React, {Component} from 'react'
 import {View, TouchableOpacity} from 'react-native'
 import VText from '../VText'
 import style from './style'
-import StyleSheetPropType from 'react-native/Libraries/StyleSheet/StyleSheetPropType'
 
 type Props = {
   labels: Array<string>,
   active?: number,
   onChange?: Function,
-  ativeButtonStyle?: StyleSheetPropType,
-  inativeButtonStyle?: StyleSheetPropType,
-  ativeTextStyle?: StyleSheetPropType,
-  inativeTextStyle?: StyleSheetPropType,
-  style?: StyleSheetPropType
+  ativeButtonStyle?: any,
+  inativeButtonStyle?: any,
+  ativeTextStyle?: any,
+  inativeTextStyle?: any,
+  style?: any
 }
 
 type State = {
